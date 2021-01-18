@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap');
+
+:root{
+    font-size: 18px;
+    --dark-cyan: hsl(185, 75%, 39%);
+    --dark-blue: hsl(229, 23%, 23%);
+    --dark-grayish: hsl(227, 10%, 46%);
+    --dark-gray: hsl(0, 0%, 59%);
+    --light-gray: hsl(0, 0%, 86%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Kumbh Sans', sans-serif;
+    color: hsl(0, 11%, 12%);
+    overflow: hidden;
+}
+
+section{
+    background: var(--dark-cyan);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
+
+.card{
+    background: white;
+    width: 350px;
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 3;
+}
+
+.card-header{
+    background-image: url(images/bg-pattern-card.svg);
+    background-size: cover;
+    height: 150px ;
+}
+
+.card-image{
+    width: 120px;
+    height: 120px;
+    border: 5px solid white;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: -55px auto;
+}
+
+.card-image img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-body{
+    padding: 0px 20px 30px;
+}
+.name-age{
+    padding: 50px 0px 0px;
+    font-size: 1rem;
+    margin: 15px;
+}
+
+.age, .city, .text{
+    font-weight: 400;
+    color: hsl(0, 11%, 12%);
+    opacity: 0.6;
+}
+
+.age{
+    margin-left: 5px;
+}
+
+.city{
+    font-size: 0.8rem;
+}
+
+.card-footer{
+    border-top: 2px solid var(--light-gray);    
+    display: flex;
+}
+
+.card-footer .item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    height: 100px;   
+}
+
+.card-footer .item .value{
+    font-size: 1rem;
+    margin-bottom: 6px ;
+}
+
+.card-footer .item .text{
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+}
+
+/* Circles */
+
+.circles img{   
+    position: absolute;
+    width: 800px;
+    height: auto;
+    animation: 2s circles forwards;
+    opacity: 0;
+}
+
+.circle1{    
+    top: -240px;
+    left: -130px;
+    transform: translate(-150px, -50px);
+}
+
+.circle2{
+    bottom: -240px;
+    right: -130px;
+    transform: translate(150px, -50px);
+}
+
+@keyframes circles{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+.attribution {
+    position: absolute;
+    font-size: 11px;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    bottom: 10px;
+    color: white;
+}
+
+.attribution a {
+    color: white;
+}
+
+.attribution::before{
+    content: '';
+    position: absolute;
+    background: hsla(229, 23%, 23%, 0.4);
+    backdrop-filter: blur(2rem);
+    width: 100%;
+    height: 30px;
+    bottom: -10px;
+    left: 0;
+    z-index: -1;
+}
